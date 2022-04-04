@@ -41,13 +41,13 @@ void Matrix::SetElement(const size_t m, const size_t n, int value)
 	m_array[m][n] = value;
 }
 
-//ostream& operator << (ostream& out, const Matrix& matrix)
-//{
-//	for (size_t m = 0; m < 3; m++)
-//	{
-//		for (size_t n = 0; n < 3; n++)
-//			out << matrix(m, n) << " ";
-//		out << endl;
-//	}
-//	return out;
-//}
+ostream& operator << (ostream& out, Matrix& matrix)
+{
+	for (size_t m = 0; m < 3; m++)
+	{
+		for (size_t n = 0; n < 3; n++)
+			out << matrix(m, n) << " ";
+		out << endl;
+	}
+	return out;
+}

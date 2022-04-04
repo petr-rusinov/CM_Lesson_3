@@ -56,8 +56,8 @@ void task_2()
 
     cout << "Matrix:" << endl;
     Matrix m(3, 3, vec);
-    cout << m(1, 1);
-    //cout << m << endl;
+    cout << m(1, 1) << endl;
+    cout << m << endl;
     //vector<vector<int>> vec2;
     //vec2[0][0] = 1;
     //vector<int> vv;

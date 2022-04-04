@@ -18,6 +18,6 @@ public:
 	double Determinant();
 	int operator () (const size_t m, const size_t n);
 	void SetElement(const size_t m, const size_t n, int value);
-	//friend ostream& operator << (ostream& out, const Matrix& matrix);
+	friend ostream& operator << (ostream& out, Matrix& matrix);
 };
 
