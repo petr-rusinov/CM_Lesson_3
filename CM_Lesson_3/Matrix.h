@@ -12,8 +12,6 @@ private:
 	size_t m_sizeM, m_sizeN;
 	vector<vector<int>> m_array;
 public:
-	Matrix();
-	Matrix(size_t m, size_t n);
 	Matrix(size_t m, size_t n, const vector<vector<int>>& arr);
 	double Determinant();
 	int operator () (const size_t m, const size_t n);

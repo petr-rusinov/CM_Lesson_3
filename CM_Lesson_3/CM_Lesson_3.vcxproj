@@ -142,9 +142,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CM_Lesson_3.cpp" />
+    <ClCompile Include="IntContainer.cpp" />
+    <ClCompile Include="IntRange.cpp" />
     <ClCompile Include="Matrix.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IntContainer.h" />
+    <ClInclude Include="IntRange.h" />
     <ClInclude Include="Matrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
