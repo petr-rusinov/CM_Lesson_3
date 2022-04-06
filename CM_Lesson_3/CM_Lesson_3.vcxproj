@@ -143,7 +143,6 @@
   <ItemGroup>
     <ClCompile Include="CM_Lesson_3.cpp" />
     <ClCompile Include="IntContainer.cpp" />
-    <ClCompile Include="IntRange.cpp" />
     <ClCompile Include="Matrix.cpp" />
   </ItemGroup>
   <ItemGroup>
