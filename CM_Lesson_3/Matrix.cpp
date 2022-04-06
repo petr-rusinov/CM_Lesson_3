@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Matrix::Matrix(size_t m, size_t n, const vector<vector<int>>& arr)
+Matrix::Matrix(size_t m, size_t n, const vector<vector<double>>& arr)
 {
 	m_sizeM = m;
 	m_sizeN = n;
@@ -18,7 +18,7 @@ Matrix::Matrix(size_t m, size_t n, const vector<vector<int>>& arr)
 		copy(arr[m].begin(), arr[m].end(), m_array[m].begin());
 }
 
-double computeDet(int size, vector <vector<int>>& inputVec)
+double computeDet(size_t size, vector <vector<double>>& inputVec)
 {
 	double det = 0.0;
 	if (size == 1)
@@ -43,19 +43,20 @@ double computeDet(int size, vector <vector<int>>& inputVec)
 	}
 	if (size > 3)
 	{
-		vector<vector<int>> tempVec;
+		//Разложение по 1-й строке
+		vector<vector<double>> tempVec;
 		tempVec.resize(size - 1);
 		for (size_t m = 0; m < size - 1; ++m)
 			tempVec[m].resize(size - 1);
-
 		for (size_t col = 0; col < size; ++col)
 		{
+			//Создание миноров
 			for (size_t row = 1; row < size; ++row)
 			{
 				copy(inputVec[row].begin(), inputVec[row].begin()+col, tempVec[row - 1].begin());
 				copy(inputVec[row].begin() + col + 1, inputVec[row].end(), tempVec[row - 1].begin()  + col );
 			}
-			
+			//Рекурсивный вызов для определения детерминантов миноров
 			det += pow((-1), 1 + (col + 1)) * inputVec[0][col] * computeDet(size - 1, tempVec);
 		}
 	}
@@ -67,12 +68,12 @@ double Matrix::Determinant()
 	return computeDet(m_sizeM, m_array);
 }
 
-int Matrix::operator()(const size_t m, const size_t n)
+double Matrix::operator()(const size_t m, const size_t n)
 {
 	return m_array[m][n];
 }
 
-void Matrix::SetElement(const size_t m, const size_t n, int value)
+void Matrix::SetElement(const size_t m, const size_t n, double value)
 {
 	m_array[m][n] = value;
 }

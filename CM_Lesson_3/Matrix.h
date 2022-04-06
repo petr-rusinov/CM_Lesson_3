@@ -10,12 +10,12 @@ class Matrix
 private:
 	//array<array<double, 
 	size_t m_sizeM, m_sizeN;
-	vector<vector<int>> m_array;
+	vector<vector<double>> m_array;
 public:
-	Matrix(size_t m, size_t n, const vector<vector<int>>& arr);
+	Matrix(size_t m, size_t n, const vector<vector<double>>& arr);
 	double Determinant();
-	int operator () (const size_t m, const size_t n);
-	void SetElement(const size_t m, const size_t n, int value);
+	double operator () (const size_t m, const size_t n);
+	void SetElement(const size_t m, const size_t n, double value);
 	friend ostream& operator << (ostream& out, Matrix& matrix);
 };
 
